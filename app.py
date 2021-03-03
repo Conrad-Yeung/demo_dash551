@@ -18,10 +18,8 @@ game_melt = game.melt(id_vars=["Rank", "Name","Platform","Year","Genre","Publish
 sales_data = game_melt.loc[game_melt.Region != "Global_Sales",:]
 sorted_genre_totalsales = list(game.groupby("Genre").sum().sort_values("Global_Sales",ascending=False).index)
 
-#Initialize app instance
+#Initialize app
 app = dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
-#Create Heroku server
-server = app.server
 
 #Side Bar
 SIDEBAR_STYLE = {
