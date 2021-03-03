@@ -20,6 +20,7 @@ sorted_genre_totalsales = list(game.groupby("Genre").sum().sort_values("Global_S
 
 #Initialize app
 app = dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 #Side Bar
 SIDEBAR_STYLE = {
